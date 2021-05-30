@@ -1,0 +1,103 @@
+{% extends 'feedapp/base.html' %}
+{% load humanize %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block main_title %}Volunteering{% endblock %}
+
+{% block sub_title %}Leave a message for everyone to see!{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<style>
+ textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=file] {
+  width: 75%;
+  height: 83%;
+  background-color: #69a2e7;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+button{
+  width: 100%;
+  background-color: #69a2e7;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+</style>
+<form method="POST" action="/action_page.php">
+  <article class="media">
+    <div class="media-content">
+      <div class="field">
+        <p class="control">
+            <textarea type='text' name="message" rows="10" cols="30"></textarea>
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              {{ form.text }}
+            </div>
+            <div class="control">
+                <input type="file" id="myFile" name="filename">
+              <input type="submit" class="button is-info"></button>
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
+  </article>
+</form>
+{% endif %}
+    <article class="media mt-5">
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>20eucs023 Barath R R </strong> 
+            <small>1 hours ago</small> 
+            <br>
+            Help deliver meals and gifts to patients at a local hospital.<br>
+            Contact Detail: 9876543210.<br>
+            Address:KMCH Coimatore TamilNadu.
+          </p>
+          <p>
+            <strong>20eucs053 Jason Jose </strong> 
+            <small>12 hours ago</small> 
+            <br>
+            Organize a family day for residents of a retirement home and relatives to play games together<br>
+            Contact Detail: 6789054321.<br>
+            Address:Mary Oldage home,Dharapuram,tiruppur.
+          </p>
+          <p>
+            <strong>20eucs020 Aswin B </strong> 
+            <small>23 hours ago</small> 
+            <br>
+            Need Volunteers to help people in flood zone<br>
+            Contact Detail: 7658904321.<br>
+            Address:Velachery,Chennai,600042.
+          </p>
+          <p>
+            <strong>20eucs055 Olivia </strong> 
+            <small>1 hours ago</small> 
+            Need Volunteers to clean Marina Beach <br>
+            Contact Detail: 6879054123.<br>
+            Address:Marina Beach,Chennai, TamilNadu.
+          </p>
+        </div>
+    </div>
+{% endblock %}

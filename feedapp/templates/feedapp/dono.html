@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #333;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-size: 45px;
+  font-weight: 300;
+  margin: 10px;
+}
+
+h2 span {
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.container > div {
+  cursor: pointer;
+  height: 210px;
+  background-size: cover;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  transition: all 0.5s ease-in;
+}
+
+.container > div:hover {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.container > div:nth-of-type(1) {
+  grid-column: 1 / 5;
+}
+
+.container > div:nth-of-type(2) {
+  grid-column: 1 / 5;
+}
+
+.container > div:nth-of-type(3) {
+  grid-column: 1 / 5;
+}
+
+.container > div:nth-of-type(4) {
+  grid-column: 1 / 5;
+}
+
+.bg1 {
+  background: url('https://i.ibb.co/dBLbrRV/bg1.jpg');
+  color: rgb(251, 251, 251);
+}
+
+.bg2 {
+  background: url('https://i.ibb.co/Fb5jb3J/bg2.jpg');
+  color: rgb(10, 10, 10);
+}
+
+    </style>
+</head>
+<title></title>
+<body>
+  <div class="navbar-end pr-2">
+    <div class="navbar-item">
+      <div class="buttons">
+        {% if user.is_authenticated %}
+        <a class="button is-primary" href="/logout/" >Logout</a>
+        {% else %}
+        <a class="button is-primary" href="/login/auth0">Login</a>
+        {% endif %} 
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+      <div class="bg1">
+        <a href="https://www.pmcares.gov.in/en/" style="color: rgb(248, 247, 247)"><h2>COVID-19 PM Care Fund</h2></a>
+      </div>
+      <div class="bg1">
+        <a href="https://www.worldvision.in/givelife/index.aspx?code=25412&network=g&device=c&keyword=world%20vision%20donation&adposition=&gclid=CjwKCAjwzMeFBhBwEiwAzwS8zP5VKXmwxvYemH_UijQk_Iq9Wal4EbMdhWC5Jww5Yrsb4zOPLYJwpBoCBEEQAvD_BwE" style="color: rgb(247, 244, 244)"><h2>NGO - Child Sponsor</h2></a>
+      </div>
+      <div class="bg2">
+        <a href="https://www.helpageindia.org/" style="color: rgb(0, 0, 0)"><h2>NGO-Oldage</h2></a>
+      </div>
+     <div class="bg2">
+      <a href="https://www.apd-india.org/donation_category?gclid=CjwKCAjwzMeFBhBwEiwAzwS8zDmqJCCzq5SrwLhlWntHrEvHKt-OOyb3ts7zp298OYZqfYk525g3IRoCB04QAvD_BwE" style="color: rgb(0, 0, 0)"><h2>Ngo-Disabled</h2></a>
+      </div>
+</body>
+</html>

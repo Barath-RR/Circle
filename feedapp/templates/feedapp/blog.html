@@ -1,0 +1,104 @@
+{% extends 'feedapp/base.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block main_title %}Public Feed{% endblock %}
+
+{% block sub_title %}Leave a message for everyone to see!{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<style>
+ textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=file] {
+  width: 75%;
+  height: 83%;
+  background-color: #69a2e7;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+button{
+  width: 100%;
+  background-color: #69a2e7;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+</style>
+<form method="POST" action="/action_page.php">
+  <article class="media">
+    <div class="media-content">
+      <div class="field">
+        <p class="control">
+            <textarea type='text' name="message" rows="10" cols="30"></textarea>
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              {{ form.text }}
+            </div>
+            <div class="control">
+                <input type="file" id="myFile" name="filename">
+              <input type="submit" class="button is-info"></button>
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
+  </article>
+</form>
+{% endif %}
+
+    <article class="media mt-5">
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>20eucs020 Aswin B </strong> 
+            <small>3 hours ago</small> 
+            <br>
+            WEST BENGAL<br>
+
+50L Oxygen cylinders available for rent <br>
+
+Name: Surya <br>
+Contact: +919036543281<br>
+Location: Howrah, West Bengal<br>
+
+Aadhar and prescription need
+          </p>
+          <p>
+            <strong>20eucs023 Barath </strong> 
+            <small>5 hours ago</small> <br>
+            Velachery has more than 600 vaccines so guys don't worry about the after effect have a vaccine shot save world and its people.
+          </p><p>
+            <strong>20eucs053 Jason Jose </strong> 
+            <small>6 hours ago</small> 
+            <br>
+           Guys I have vaccinated please Vaccine yourself Save earth.
+          </p>
+          <p>
+            <strong>20eucs055 Olivia </strong> 
+            <small>5 hours ago</small> <br>
+            Stay Home Stay Safe.
+          </p>
+          
+        </div>
+    </div>
+{% endblock %}
